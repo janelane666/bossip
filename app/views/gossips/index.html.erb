@@ -1,0 +1,31 @@
+<h1>Gossip All Starz</h1>
+<p>Retrouvez ici la liste de tous les potins</p>
+<hr>
+<div>
+  <h4>Ca va <%= @first_name %> ?</h4>
+</div>
+<div>
+  <button type="button" class="btn btn-danger">
+    <%= link_to "Dis-nous tous", new_gossip_path, class:"text-decoration-none text-white" %>
+  </button>
+</div> 
+<br>
+<% if @gossip !=nil%>
+  <div class="">
+      <%= "Votre potin a bien ete enregistre ! Merci" %>
+  </div>
+  <%end%>
+<br>
+
+<% @gossips.each_with_index do |gossip,index| %>
+  <div class="card">
+    <div class="card-body">
+      <h5><%= link_to "#{gossip[:author]}", user_path(gossip[:user_id]), class: "text-decoration-none card-title " %></h5>
+      <p class="card-text"><%= gossip[:title] %></p>
+      <%= link_to "Consulter", gossip_path(gossip[:id]), class: "card-link btn btn-danger" %>
+      <%= link_to "Modifier", edit_gossip_path(gossip[:id]), class: "card-link btn-success" %>
+      <%= link_to "Supprimer", gossip_path(gossip[:id]), class: "card-link btn btn-dark", data:{confirm:"êtes vous sûr?", method: "DELETE"} %>
+    </div>
+  </div>
+  <br>
+  <% end %>

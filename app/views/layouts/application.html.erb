@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+   <link href="https://fonts.googleapis.com/css?family=Average|Forum|Lilita+One|Roboto+Slab|VT323&display=swap" rel="stylesheet"> 
+
+    <title>The Gossip Project</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+     <%= link_to 'THE GOSSIP PROJECT', root_path, :class => 'navbar-brand' %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to 'Gossip', gossips_path, :class => 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Author', users_path, :class => 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Team', team_path, :class => 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Contact', contact_path, :class => 'nav-link' %>
+          </li>
+        </ul>
+        <button class="btn btn-outline-dark my-2 my-sm-0 mr-2" type="submit"> <%= link_to 'Sign Up', new_user_path %></button>
+        <button class="btn btn-outline-dark my-2 my-sm-0 ml-2" type="submit"> <%= link_to 'Log In', new_session_path %></button>
+    </div>
+  </nav>
+
+  </head>
+  <body >
+    <div class="corps">
+    <%= yield %>
+    </div>
+  </body>
+
+  <nav class="navbar fixed-bottom  navbar-expand-lg navbar-light bg-light">
+    <div class="col my-col">
+      <MARQUEE direction="left" height="25">
+
+      <p>Le potin est un alliage de cuivre, d'étain et parfois de plomb (avec parfois des traces d'autres métaux) largement utilisé par les peuples gaulois pour fabriquer leurs monnaies1. Les pièces de monnaie en potin étaient le plus souvent coulées et non frappées. Cette monnaie gauloise était principalement utilisée dans le nord des Gaules. © All right reserved</p>
+    </MARQUEE>
+  </nav>
+
+</html>
