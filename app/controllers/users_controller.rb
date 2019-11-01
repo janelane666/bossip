@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  def home
+  def new
+  	@user = User.new
   end
 
-  def login
+  def create
   end
 end
